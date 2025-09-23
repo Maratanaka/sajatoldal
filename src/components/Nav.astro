@@ -2,43 +2,46 @@
 let isOpen = false;
 ---
 
-<nav class="flex justify-between items-center py-4 max-w-3xl mx-auto">
-  <!-- Logo -->
-  <a href="/" class="text-xl font-bold">Craftzdog Uses</a>
+<nav class="flex justify-between items-center py-4 max-w-3xl mx-auto px-4">
+  
+  <a href="/" class="text-xl font-bold">Martin Tokes</a>
 
-  <!-- Desktop Menu -->
-  <div class="hidden md:flex space-x-6">
-    <a href="/hardware" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Hardware</a>
-    <a href="/software" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Software</a>
-    <a href="/design" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Design</a>
+  <!-- Desktop menu -->
+  <div class="hidden md:flex space-x-4">
+    <a href="/hardware" class="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Hardware</a>
+    <a href="/software" class="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Software</a>
+    <a href="/design" class="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Design</a>
     <a href="https://github.com/craftzdog/craftzdog-uses" target="_blank" class="text-sm text-blue-600 dark:text-blue-400">GitHub</a>
   </div>
 
-  <!-- Mobile Hamburger -->
+  <!-- Hamburger button -->
   <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
     ☰
   </button>
 </nav>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="overflow-hidden max-h-0 transition-all duration-300 md:hidden bg-gray-100 dark:bg-gray-800">
-  <div class="flex flex-col space-y-4 px-6 py-4">
-    <a href="/hardware" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Hardware</a>
-    <a href="/software" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Software</a>
-    <a href="/design" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Design</a>
-    <a href="https://github.com/craftzdog/craftzdog-uses" target="_blank" class="block text-sm text-blue-600 dark:text-blue-400">GitHub</a>
+<!-- Mobile menu -->
+<div id="mobile-menu"
+     class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden bg-gray-100 dark:bg-gray-800">
+  <div class="flex flex-col space-y-2 p-4">
+    <a href="/hardware" class="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Hardware</a>
+    <a href="/software" class="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Software</a>
+    <a href="/design" class="text-gray-700 dark:text-gray-200 hover:text-gray-200 hover:text-gray-900 dark:hover:text-white">Design</a>
+    <a href="https://github.com/craftzdog/craftzdog-uses" target="_blank" class="text-sm text-blue-600 dark:text-blue-400">GitHub</a>
   </div>
 </div>
 
 <script>
-  const toggleBtn = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
 
-  toggleBtn.addEventListener("click", () => {
-    if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px") {
-      mobileMenu.style.maxHeight = "0px"; // slide up
+  toggle.addEventListener("click", () => {
+    if (menu.classList.contains("max-h-0")) {
+      menu.classList.remove("max-h-0");
+      menu.classList.add("max-h-96"); // kinyílik
     } else {
-      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px"; // slide down
+      menu.classList.remove("max-h-96");
+      menu.classList.add("max-h-0"); // összecsukódik
     }
   });
 </script>
