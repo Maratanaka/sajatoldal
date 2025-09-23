@@ -4,7 +4,7 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout>
-  <div class="relative w-full mt-2 mb-6 h-[50vh] overflow-hidden">
+  <div class="relative w-full mt-2 mb-6 h-[40vh] overflow-hidden">
     <!-- Videó -->
     <video 
       class="w-full h-full object-cover"
@@ -18,15 +18,24 @@ import Card from "../components/Card.astro";
     </video>
 
     <!-- Fehér overlay -->
-    <div class="absolute inset-0 bg-white/30 z-10"></div>
+    <div class="absolute inset-0 bg-white/60 z-10"></div>
+
+    <!-- Szöveg a videó közepén -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+      <p class=" text-gray-900 mb-2">WELCOME TO</p>
+      <h1 class="text-5xl text-gray-900">
+  My first portfolio <span class="text-orange-500">website</span>
+</h1>
+
+    </div>
   </div>
-
-  <main class="max-w-6xl mx-auto p-6">
-    <h1 class="text-4xl font-bold mb-6">Uses</h1>
-    <p class="text-lg mb-8 text-gray-600">
-      Here’s the Computing, Frontend, and Backend I use for coding, design, and daily projects.
+<!-- Középső leíró szöveg a videó és kártyák között -->
+  <div class="max-w-3xl mx-auto text-center mb-12 px-4">
+    <p class="text-gray-600 text-lg">
+      I created this website to share my past projects with others and to show what tools I use in my work.
     </p>
-
+  </div>
+  <main class="max-w-6xl mx-auto p-6">
     <!-- Cards container -->
     <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
       <Card 
