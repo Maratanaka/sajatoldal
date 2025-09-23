@@ -30,22 +30,21 @@ let isOpen = false;
 <div id="mobile-menu"
      class="max-h-0 overflow-hidden transition-[max-height] duration-1000 ease-in-out md:hidden bg-gray-100 dark:bg-gray-200">
   <div class="flex flex-col p-4 space-y-2">
-    <!-- Egy sorba rendezve: balra a linkek, jobbra a GitHub -->
+    <!-- "Computing" + GitHub egy sorban -->
     <div class="flex justify-between items-center">
-      <!-- Bal oldali linkek -->
-      <div class="flex space-x-4">
-        <a href="/hardware" class="text-gray-700 dark:text-gray-700 hover:text-gray-900 dark:hover:text-gray-900">Computing</a>
-        <a href="/software" class="text-gray-700 dark:text-gray-700 hover:text-gray-900 dark:hover:text-gray-900">Frontend</a>
-        <a href="/design" class="text-gray-700 dark:text-gray-700 hover:text-gray-900 dark:hover:text-gray-900">Backend</a>
-      </div>
-      <!-- Jobb oldali GitHub link -->
+      <a href="/hardware" class="text-gray-700 dark:text-gray-700 hover:text-gray-900 dark:hover:text-gray-900">Computing</a>
       <a href="https://github.com/Maratanaka" target="_blank" class="flex items-center space-x-2 text-black dark:text-black dark:hover:text-black hover:text-gray-900">
         <img src="/images/github.png" alt="GitHub" class="h-5 w-5">
         <span>GitHub</span>
       </a>
     </div>
+
+    <!-- A többi link marad vertikálisan -->
+    <a href="/software" class="text-gray-700 dark:text-gray-700 hover:text-gray-900 dark:hover:text-gray-900">Frontend</a>
+    <a href="/design" class="text-gray-700 dark:text-gray-700 hover:text-gray-900 dark:hover:text-gray-900">Backend</a>
   </div>
 </div>
+
 
 
 <script>
