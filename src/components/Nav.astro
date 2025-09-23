@@ -35,16 +35,24 @@ let isOpen = false;
 </div>
 
 <script>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("mobile-menu");
+const links = document.getElementById("mobile-links");
 
-  toggle.addEventListener("click", () => {
-    if (menu.classList.contains("max-h-0")) {
-      menu.classList.remove("max-h-0");
-      menu.classList.add("max-h-96"); // kinyílik
-    } else {
-      menu.classList.remove("max-h-96");
-      menu.classList.add("max-h-0"); // összecsukódik
-    }
-  });
+toggle.addEventListener("click", () => {
+  if (menu.style.maxHeight && menu.style.maxHeight !== "0px") {
+    // Zárás
+    menu.style.maxHeight = "0px";
+    links.classList.remove("opacity-100", "translate-y-0");
+    links.classList.add("opacity-0", "translate-y-2");
+  } else {
+    // Nyitás
+    menu.style.maxHeight = menu.scrollHeight + "px";
+    // Kis késleltetés, hogy a max-height animáció és a link fade együtt legyen
+    setTimeout(() => {
+      links.classList.remove("opacity-0", "translate-y-2");
+      links.classList.add("opacity-100", "translate-y-0");
+    }, 50);
+  }
+});
 </script>
